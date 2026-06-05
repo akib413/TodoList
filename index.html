@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <!-- tailwindcss & daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="w-[480px] mx-auto pt-10">
+        <div class="join w-120">
+            <div class="w-95 flex mx-auto">
+                <label class="input validator join-item">
+                    <input class="add-input" type="text" placeholder="Add your daily task" required />
+                </label>
+                <!-- <div class="validator-hint hidden">Enter valid email address</div> -->
+                <button class="add-btn btn btn-neutral join-item">Join</button>
+            </div>
+        </div>
+
+        <ul class="list bg-base-100 rounded-box shadow-md w-120">
+
+            <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Here is my daily task</li>
+
+            <div class="todo-list">
+                
+            </div>
+
+        </ul>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+
+</html>
