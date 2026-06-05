@@ -1,7 +1,6 @@
 let addInput = document.querySelector('.add-input')
 let addBtn = document.querySelector('.add-btn')
 let todoList = document.querySelector('.todo-list')
-let totalTask = []
 
 function addDailyTask() {
 
@@ -28,7 +27,6 @@ function addDailyTask() {
                     <i class="fa-solid fa-trash-can"></i>
                 </button>
             </li>
-
     `
     todoList.appendChild(addNewItem)
         addInput.value = ''
