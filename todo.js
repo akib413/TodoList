@@ -32,20 +32,34 @@ function addDailyTask() {
     `
     todoList.appendChild(addNewItem)
         addInput.value = ''
+        saveData()
     } else{
         alert("You didn't add any task. Please add your task.")
+        saveData()
     }
-
-    addNewItem.querySelector('.delete').addEventListener('click', ()=>{
-        addNewItem.innerHTML = ''
-    })
-    
-    addNewItem.querySelector('.done').addEventListener('click', ()=>{
-        addNewItem.style.background = 'green'
-        addNewItem.style.color = 'white'
-    })
 }
+
+todoList.addEventListener('click', (e)=>{
+    if(e.target.closest('.delete')){
+        e.target.closest('div').remove()
+        saveData()
+    }
+    if(e.target.closest('.done')){
+        let task = e.target.closest('div')
+        task.classList.toggle('completed')
+        saveData()
+    }
+})
 
 addBtn.addEventListener('click', () => {
     addDailyTask()
 })
+
+function saveData(){
+    localStorage.setItem('data', todoList.innerHTML)
+}
+
+function showTask(){
+    todoList.innerHTML = localStorage.getItem("data")
+}
+showTask()
